@@ -4,8 +4,23 @@ import { Reveal, Section } from "./section";
 
 const groups: Record<string, string[]> = {
   Leadership: ["Hiring", "1-on-1s", "Performance Reviews", "Mentorship", "OKRs", "Agile/Scrum"],
-  Architecture: ["System Design", "Microservices", "Micro-frontends", "REST", "GraphQL", "Solution Architecture"],
-  Frontend: ["React", "Next.js", "Angular", "TypeScript", "Stencil JS", "Storybook", "Web Components"],
+  Architecture: [
+    "System Design",
+    "Microservices",
+    "Micro-frontends",
+    "REST",
+    "GraphQL",
+    "Solution Architecture",
+  ],
+  Frontend: [
+    "React",
+    "Next.js",
+    "Angular",
+    "TypeScript",
+    "Stencil JS",
+    "Storybook",
+    "Web Components",
+  ],
   Backend: ["Node.js", "Express", "Prisma", "PostgreSQL", "REST APIs", "GraphQL"],
   Cloud: ["AWS", "Vercel", "CDN", "Edge Runtime"],
   DevOps: ["GitHub Actions", "CI/CD", "Docker", "Git", "Security"],

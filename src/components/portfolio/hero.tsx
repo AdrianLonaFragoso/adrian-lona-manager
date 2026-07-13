@@ -58,7 +58,12 @@ function ParticleField() {
             strokeWidth="1"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{ duration: 3 + i, repeat: Infinity, repeatType: "reverse", delay: i * 0.5 }}
+            transition={{
+              duration: 3 + i,
+              repeat: Infinity,
+              repeatType: "reverse",
+              delay: i * 0.5,
+            }}
           />
         ))}
       </svg>
@@ -85,15 +90,14 @@ export function Hero() {
             Available for Engineering Leadership roles
           </div>
 
-          <h1 className="text-balance font-display text-5xl leading-[1.02] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-[92px]">
+          <h1 className="text-balance font-display text-4xl leading-[1.08] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
             Engineering Leader building{" "}
             <span className="relative inline-block">
               <em className="not-italic bg-gradient-to-br from-foreground via-foreground to-accent-blue bg-clip-text text-transparent">
                 scalable software
               </em>
             </span>{" "}
-            and{" "}
-            <em className="not-italic italic text-muted-foreground">high-performing teams.</em>
+            and <em className="not-italic italic text-muted-foreground">high-performing teams.</em>
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground text-balance">
@@ -111,7 +115,8 @@ export function Hero() {
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
-              href="#contact"
+              href="/adrian-lona-2026.pdf"
+              download
               className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-5 py-3 text-sm font-medium text-foreground transition-all hover:border-foreground/40"
             >
               <Download className="h-4 w-4" />

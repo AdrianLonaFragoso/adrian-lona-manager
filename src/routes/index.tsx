@@ -39,8 +39,7 @@ export const Route = createFileRoute("/")({
           "@type": "Person",
           name: "Adrian Lona",
           jobTitle: "Software Engineering Lead",
-          description:
-            "Engineering Leader building scalable software and high-performing teams.",
+          description: "Engineering Leader building scalable software and high-performing teams.",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Querétaro",

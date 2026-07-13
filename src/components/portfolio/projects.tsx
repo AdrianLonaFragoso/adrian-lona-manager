@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Reveal, Section } from "./section";
+import { EarlierRoles } from "./earlier-roles";
 import { ArrowUpRight } from "lucide-react";
 
 type Project = {
@@ -13,6 +14,7 @@ type Project = {
   impact: string[];
   stack: string[];
   accent: string;
+  diagram: string[];
 };
 
 const projects: Project[] = [
@@ -34,25 +36,14 @@ const projects: Project[] = [
     ],
     stack: ["Node.js", "React", "Stencil JS", "PostgreSQL", "GitHub Actions", "Vercel"],
     accent: "from-sky-400/40 to-blue-500/10",
-  },
-  {
-    company: "Kavak",
-    role: "Technical Lead",
-    timeline: "2019 — 2022",
-    problem:
-      "LATAM's first unicorn needed to expand into new markets while scaling engineering culture and standards.",
-    solution:
-      "Internationalization framework, monorepo migration, and governed design system for a 50+ engineer platform.",
-    leadership:
-      "20+ interviews, weekly 1-on-1s, formal performance reviews, and frontend engineering standards.",
-    architecture: "Next.js · React · Strapi CMS · Storybook · Monorepo (Nx/Turborepo)",
-    impact: [
-      "Launched in Brazil, Chile & Argentina",
-      "100% UI consistency across web ecosystem",
-      "Reduced build times for 50+ contributors",
+    diagram: [
+      "React / Stencil JS",
+      "Design System",
+      "Node.js / Express",
+      "Prisma ORM",
+      "PostgreSQL",
+      "Vercel",
     ],
-    stack: ["React", "Next.js", "TypeScript", "Storybook", "Strapi", "AWS"],
-    accent: "from-violet-400/40 to-fuchsia-500/10",
   },
   {
     company: "Cemex",
@@ -72,6 +63,14 @@ const projects: Project[] = [
     ],
     stack: ["Angular", "Stencil.js", "Web Components", "TypeScript", "Strapi"],
     accent: "from-emerald-400/40 to-teal-500/10",
+    diagram: [
+      "Angular Portal",
+      "Web Components",
+      "Strapi CMS",
+      "Design System",
+      "A11y Standards",
+      "CI/CD",
+    ],
   },
   {
     company: "Midas Technologies",
@@ -91,10 +90,84 @@ const projects: Project[] = [
     ],
     stack: ["React", "React Native", "TypeScript", "Mapbox", "Design Systems"],
     accent: "from-amber-400/40 to-orange-500/10",
+    diagram: ["React Web", "React Native", "Design System", "Web Maps API", "API Layer", "CI/CD"],
+  },
+  {
+    company: "Kavak",
+    role: "Technical Lead",
+    timeline: "2019 — 2022",
+    problem:
+      "LATAM's first unicorn needed to expand into new markets while scaling engineering culture and standards.",
+    solution:
+      "Internationalization framework, monorepo migration, and governed design system for a 50+ engineer platform.",
+    leadership:
+      "20+ interviews, weekly 1-on-1s, formal performance reviews, and frontend engineering standards.",
+    architecture:
+      "Next.js · React · Strapi CMS · Storybook · Monorepo (Nx/Turborepo) · Angular · Stencil JS",
+    impact: [
+      "Launched in Brazil, Chile & Argentina",
+      "100% UI consistency across web ecosystem",
+      "Reduced build times for 50+ contributors",
+    ],
+    stack: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Storybook",
+      "Strapi",
+      "AWS",
+      "Angular",
+      "Stencil JS",
+    ],
+    accent: "from-violet-400/40 to-fuchsia-500/10",
+    diagram: [
+      "Next.js App",
+      "Strapi CMS",
+      "Monorepo (Nx)",
+      "Storybook DS",
+      "i18n Framework",
+      "AWS",
+    ],
+  },
+  {
+    company: "Teknei",
+    role: "UX Engineer",
+    timeline: "2018 — 2019",
+    problem:
+      "Early corporate digital transformation in Mexico, needing modern UX and scalable frontend delivery within traditional Java ecosystems.",
+    solution:
+      "Java Spring MVC interfaces enriched with modern JavaScript, bridging legacy backend patterns with evolving frontend standards.",
+    leadership:
+      "Technical execution aligned to business strategy, driving frontend best practices within an enterprise services environment.",
+    architecture: "Java Spring MVC · JavaScript · jQuery · HTML/CSS · UX Design",
+    impact: [
+      "Corporate platform interfaces modernized",
+      "Technical alignment across business & engineering",
+      "Foundation for scalable frontend delivery",
+    ],
+    stack: ["Java", "Spring MVC", "JavaScript", "jQuery", "HTML/CSS", "UX Design"],
+    accent: "from-slate-400/40 to-zinc-500/10",
+    diagram: [
+      "Java Spring MVC",
+      "JavaScript / jQuery",
+      "HTML/CSS UI",
+      "UX Design",
+      "Spring Security",
+      "Git",
+    ],
   },
 ];
 
-function ArchitectureDiagram() {
+function ArchitectureDiagram({ boxes }: { boxes: string[] }) {
+  const positions = [
+    { x: 30, y: 30, w: 100, h: 40 },
+    { x: 30, y: 90, w: 100, h: 40 },
+    { x: 30, y: 150, w: 100, h: 40 },
+    { x: 170, y: 60, w: 100, h: 40 },
+    { x: 170, y: 120, w: 100, h: 40 },
+    { x: 300, y: 90, w: 80, h: 40 },
+  ];
+
   return (
     <svg viewBox="0 0 400 220" className="h-full w-full" aria-hidden>
       <defs>
@@ -103,15 +176,8 @@ function ArchitectureDiagram() {
           <stop offset="1" stopColor="var(--accent-blue)" stopOpacity="0.05" />
         </linearGradient>
       </defs>
-      {[
-        { x: 30, y: 30, w: 100, h: 40, label: "Web / Native" },
-        { x: 30, y: 90, w: 100, h: 40, label: "Design System" },
-        { x: 30, y: 150, w: 100, h: 40, label: "CI / CD" },
-        { x: 170, y: 60, w: 100, h: 40, label: "API Gateway" },
-        { x: 170, y: 120, w: 100, h: 40, label: "Services" },
-        { x: 300, y: 90, w: 80, h: 40, label: "Data" },
-      ].map((b) => (
-        <g key={b.label}>
+      {positions.map((b, i) => (
+        <g key={i}>
           <rect
             x={b.x}
             y={b.y}
@@ -130,7 +196,7 @@ function ArchitectureDiagram() {
             fontSize="10"
             opacity="0.75"
           >
-            {b.label}
+            {boxes[i]}
           </text>
         </g>
       ))}
@@ -159,9 +225,9 @@ export function Projects() {
   return (
     <Section
       id="work"
-      eyebrow="Featured Work"
-      title="Enterprise platforms, cultures, and architectures."
-      description="Case studies from leading engineering teams delivering software trusted by millions of users across industries."
+      eyebrow="Latest Work"
+      title="Five engineering stories that shaped my career."
+      description="From enterprise platforms to early-stage startups — the last five roles that defined my leadership and technical journey."
     >
       <div className="grid gap-6">
         {projects.map((p, i) => (
@@ -223,15 +289,12 @@ export function Projects() {
                       <span className="font-mono">system.diagram</span>
                     </div>
                     <div className="aspect-[16/9]">
-                      <ArchitectureDiagram />
+                      <ArchitectureDiagram boxes={p.diagram} />
                     </div>
                   </div>
                   <ul className="space-y-2">
                     {p.impact.map((imp) => (
-                      <li
-                        key={imp}
-                        className="flex items-start gap-3 text-sm text-foreground/90"
-                      >
+                      <li key={imp} className="flex items-start gap-3 text-sm text-foreground/90">
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-blue" />
                         {imp}
                       </li>
@@ -247,6 +310,7 @@ export function Projects() {
           </Reveal>
         ))}
       </div>
+      <EarlierRoles />
     </Section>
   );
 }

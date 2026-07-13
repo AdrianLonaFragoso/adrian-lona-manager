@@ -64,7 +64,7 @@ const items: Item[] = [
   },
   {
     company: "Web Maps",
-    role: "Web Design Lead",
+    role: "Web Design Leader",
     period: "Jan 2016 — Dec 2017",
     highlights: [
       "Managed a creative engineering team & design interns.",
@@ -92,9 +92,7 @@ export function Timeline() {
                 <div className="relative pl-10 sm:pl-14">
                   <span
                     className={`absolute left-2.5 top-6 h-3 w-3 rounded-full border-2 transition-colors sm:left-4.5 ${
-                      isOpen
-                        ? "border-accent-blue bg-accent-blue"
-                        : "border-border bg-background"
+                      isOpen ? "border-accent-blue bg-accent-blue" : "border-border bg-background"
                     }`}
                     style={{ left: "0.65rem" }}
                   />
