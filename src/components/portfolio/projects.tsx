@@ -134,26 +134,26 @@ const projects: Project[] = [
     role: "UX Engineer",
     timeline: "2018 — 2019",
     problem:
-      "Early corporate digital transformation in Mexico, needing modern UX and scalable frontend delivery within traditional Java ecosystems.",
+      "Early corporate digital transformation in Mexico, needing modern UX and scalable frontend delivery.",
     solution:
-      "Java Spring MVC interfaces enriched with modern JavaScript, bridging legacy backend patterns with evolving frontend standards.",
+      "Modern JavaScript and jQuery interfaces with a strong UX focus, bridging design and frontend development.",
     leadership:
       "Technical execution aligned to business strategy, driving frontend best practices within an enterprise services environment.",
-    architecture: "Java Spring MVC · JavaScript · jQuery · HTML/CSS · UX Design",
+    architecture: "JavaScript · jQuery · HTML/CSS · UX Design · Performance · A11y",
     impact: [
       "Corporate platform interfaces modernized",
       "Technical alignment across business & engineering",
       "Foundation for scalable frontend delivery",
     ],
-    stack: ["Java", "Spring MVC", "JavaScript", "jQuery", "HTML/CSS", "UX Design"],
+    stack: ["JavaScript", "jQuery", "HTML/CSS", "UX Design", "Performance", "A11y"],
     accent: "from-slate-400/40 to-zinc-500/10",
     diagram: [
-      "Java Spring MVC",
       "JavaScript / jQuery",
       "HTML/CSS UI",
       "UX Design",
-      "Spring Security",
-      "Git",
+      "Performance",
+      "A11y",
+      "Production",
     ],
   },
 ];
@@ -168,6 +168,15 @@ function ArchitectureDiagram({ boxes }: { boxes: string[] }) {
     { x: 300, y: 90, w: 80, h: 40 },
   ];
 
+  const arrows = [
+    "M130,50 L170,80",
+    "M130,110 L170,80",
+    "M130,110 L170,140",
+    "M130,170 L170,140",
+    "M270,80 L300,110",
+    "M270,140 L300,110",
+  ];
+
   return (
     <svg viewBox="0 0 400 220" className="h-full w-full" aria-hidden>
       <defs>
@@ -176,7 +185,7 @@ function ArchitectureDiagram({ boxes }: { boxes: string[] }) {
           <stop offset="1" stopColor="var(--accent-blue)" stopOpacity="0.05" />
         </linearGradient>
       </defs>
-      {positions.map((b, i) => (
+      {positions.slice(0, boxes.length).map((b, i) => (
         <g key={i}>
           <rect
             x={b.x}
@@ -200,14 +209,7 @@ function ArchitectureDiagram({ boxes }: { boxes: string[] }) {
           </text>
         </g>
       ))}
-      {[
-        "M130,50 L170,80",
-        "M130,110 L170,80",
-        "M130,110 L170,140",
-        "M130,170 L170,140",
-        "M270,80 L300,110",
-        "M270,140 L300,110",
-      ].map((d, i) => (
+      {arrows.map((d, i) => (
         <path
           key={i}
           d={d}
