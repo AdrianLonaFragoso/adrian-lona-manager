@@ -256,7 +256,7 @@ export function Projects() {
 
                   <dl className="mt-8 grid gap-6 sm:grid-cols-2">
                     {[
-                      { k: "Problem", v: p.problem },
+                      { k: "Opportunity", v: p.problem },
                       { k: "Solution", v: p.solution },
                       { k: "Leadership", v: p.leadership },
                       { k: "Architecture", v: p.architecture },

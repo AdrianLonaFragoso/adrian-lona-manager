@@ -73,24 +73,66 @@ function ParticleField() {
 
 export function Hero() {
   return (
-    <section id="top" className="relative isolate overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32">
+    <section id="top" className="relative isolate overflow-hidden pt-20 pb-24 sm:pt-40 sm:pb-32">
       <ParticleField />
       <div className="relative mx-auto max-w-6xl px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl"
+          className="-mx-6 mb-6 w-[calc(100%+3rem)] md:hidden"
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-blue opacity-70" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-blue" />
-            </span>
-            Available for Engineering Leadership roles
-          </div>
+          <img
+            src="/adri2.png"
+            alt="Adrian Lona"
+            className="h-[65dvh] w-full object-cover object-top"
+          />
+        </motion.div>
 
-          <h1 className="text-balance font-display text-4xl leading-[1.08] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+        <div className="flex flex-col gap-6 md:grid md:grid-cols-[auto_1fr] md:gap-x-12 md:gap-y-0">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="hidden md:block md:row-span-4"
+          >
+            <img
+              src="/adri2.png"
+              alt="Adrian Lona"
+              className="h-full w-full rounded-2xl object-cover ring-1 ring-border/60 shadow-lg md:w-52 lg:w-60"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="max-w-4xl"
+          >
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-blue opacity-70" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-blue" />
+              </span>
+              Available for Engineering Leadership roles
+            </div>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
+            className="font-display text-5xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl"
+          >
+            Adrian Lona
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="max-w-4xl text-balance font-display text-5xl leading-[1.08] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
+          >
             Engineering Leader building{" "}
             <span className="relative inline-block">
               <em className="not-italic bg-gradient-to-br from-foreground via-foreground to-accent-blue bg-clip-text text-transparent">
@@ -98,15 +140,25 @@ export function Hero() {
               </em>
             </span>{" "}
             and <em className="not-italic italic text-muted-foreground">high-performing teams.</em>
-          </h1>
+          </motion.h1>
 
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground text-balance">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+            className="max-w-2xl text-lg leading-relaxed text-muted-foreground text-balance"
+          >
             Software Engineering Lead with 10+ years delivering enterprise platforms, leading
             engineering organizations, defining technical strategy, mentoring engineers, and
             building cloud-native applications.
-          </p>
+          </motion.p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="mt-6 flex flex-wrap items-center gap-3 md:col-span-2"
+          >
             <a
               href="#work"
               className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-all hover:opacity-90"
@@ -129,17 +181,22 @@ export function Hero() {
               <MessageCircle className="h-4 w-4" />
               Let's Talk
             </a>
-          </div>
+          </motion.div>
 
-          <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs uppercase tracking-widest text-muted-foreground/70">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
+            className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs uppercase tracking-widest text-muted-foreground/70 md:col-span-2"
+          >
             <span>Currently</span>
             <span className="text-foreground/80 normal-case tracking-normal">
               Software Engineering Lead · MSC Industrial Supply
             </span>
             <span className="hidden sm:inline">·</span>
             <span className="text-foreground/80 normal-case tracking-normal">Querétaro, MX</span>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

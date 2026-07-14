@@ -79,7 +79,7 @@ export function Footer() {
           <span>© {new Date().getFullYear()} Adrian Lona · Engineering Leadership</span>
         </div>
         <div className="text-xs text-muted-foreground">
-          Designed & built with intent. Dark by default.
+          Designed by Adrian Lona
         </div>
       </div>
     </footer>

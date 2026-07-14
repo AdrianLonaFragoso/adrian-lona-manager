@@ -531,6 +531,26 @@ var MapPin = createLucideIcon("map-pin", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Menu = createLucideIcon("menu", [
+	["path", {
+		d: "M4 5h16",
+		key: "1tepv9"
+	}],
+	["path", {
+		d: "M4 12h16",
+		key: "1lakjw"
+	}],
+	["path", {
+		d: "M4 19h16",
+		key: "1djgab"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var MessageCircle = createLucideIcon("message-circle", [["path", {
 	d: "M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719",
 	key: "1sd12s"
@@ -757,5 +777,18 @@ var Workflow = createLucideIcon("workflow", [
 		key: "1cgmvn"
 	}]
 ]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var X = createLucideIcon("x", [["path", {
+	d: "M18 6 6 18",
+	key: "1bl5f8"
+}], ["path", {
+	d: "m6 6 12 12",
+	key: "d8bk6v"
+}]]);
 //#endregion
-export { ArrowUpRight as A, ChevronDown as C, Braces as D, Brain as E, Bot as O, Cloud as S, Calendar as T, GraduationCap as _, Sparkles as a, Cpu as b, Quote as c, MessageCircle as d, MapPin as f, HeartHandshake as g, Lightbulb as h, Sun as i, Award as k, Moon as l, Linkedin as m, Users as n, ShieldCheck as o, Mail as p, Target as r, Rocket as s, Workflow as t, MessageSquare as u, GitBranch as v, ChartLine as w, Compass as x, Download as y };
+export { Bot as A, Compass as C, Calendar as D, ChartLine as E, ArrowUpRight as M, Brain as O, Cpu as S, ChevronDown as T, Lightbulb as _, Sun as a, GitBranch as b, Rocket as c, MessageSquare as d, MessageCircle as f, Linkedin as g, Mail as h, Target as i, Award as j, Braces as k, Quote as l, MapPin as m, Workflow as n, Sparkles as o, Menu as p, Users as r, ShieldCheck as s, X as t, Moon as u, HeartHandshake as v, Cloud as w, Download as x, GraduationCap as y };

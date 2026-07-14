@@ -1,9 +1,9 @@
 import { o as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-import { A as ArrowUpRight, C as ChevronDown, D as Braces, E as Brain, O as Bot, S as Cloud, T as Calendar, _ as GraduationCap, a as Sparkles, b as Cpu, c as Quote, d as MessageCircle, f as MapPin, g as HeartHandshake, h as Lightbulb, i as Sun, k as Award, l as Moon, m as Linkedin, n as Users, o as ShieldCheck, p as Mail, r as Target, s as Rocket, t as Workflow, u as MessageSquare, v as GitBranch, w as ChartLine, x as Compass, y as Download } from "../_libs/lucide-react.mjs";
 import { r as AnimatePresence, t as useInView } from "../_libs/framer-motion.mjs";
 import { t as motion } from "../_libs/motion.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DgXq3tNr.js
+import { A as Bot, C as Compass, D as Calendar, E as ChartLine, M as ArrowUpRight, O as Brain, S as Cpu, T as ChevronDown, _ as Lightbulb, a as Sun, b as GitBranch, c as Rocket, d as MessageSquare, f as MessageCircle, g as Linkedin, h as Mail, i as Target, j as Award, k as Braces, l as Quote, m as MapPin, n as Workflow, o as Sparkles, p as Menu, r as Users, s as ShieldCheck, t as X, u as Moon, v as HeartHandshake, w as Cloud, x as Download, y as GraduationCap } from "../_libs/lucide-react.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-hifFwNlZ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function ThemeToggle() {
@@ -60,6 +60,14 @@ var links = [
 function Nav() {
 	const [scrolled, setScrolled] = (0, import_react.useState)(false);
 	const [progress, setProgress] = (0, import_react.useState)(0);
+	const [menuOpen, setMenuOpen] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		const onKey = (e) => {
+			if (e.key === "Escape") setMenuOpen(false);
+		};
+		document.addEventListener("keydown", onKey);
+		return () => document.removeEventListener("keydown", onKey);
+	}, []);
 	(0, import_react.useEffect)(() => {
 		const onScroll = () => {
 			setScrolled(window.scrollY > 12);
@@ -73,44 +81,93 @@ function Nav() {
 	}, []);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
 		className: `fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "glass border-b border-border/60" : "bg-transparent"}`,
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "mx-auto flex h-16 max-w-6xl items-center justify-between px-6",
-			children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "#top",
-					className: "group flex items-center gap-2 text-sm font-medium tracking-tight",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "grid h-7 w-7 place-items-center rounded-md bg-foreground text-background text-[11px] font-bold",
-						children: "AL"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "hidden sm:inline text-foreground",
-						children: "Adrian Lona"
-					})]
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
-					className: "hidden md:flex items-center gap-1",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mx-auto flex h-16 max-w-6xl items-center justify-between px-6",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+						href: "#top",
+						className: "flex items-center",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/logo-light.svg",
+							alt: "Adrian Lona",
+							className: "h-6 w-auto sm:h-7 dark:hidden"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/logo-dark.svg",
+							alt: "Adrian Lona",
+							className: "h-6 w-auto hidden sm:h-7 dark:block"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
+						className: "hidden md:flex items-center gap-1",
+						children: links.map((l) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							href: l.href,
+							className: "rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground",
+							children: l.label
+						}, l.href))
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center gap-1",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+								href: "#contact",
+								className: "hidden sm:inline-flex items-center rounded-full border border-border/70 bg-surface/60 px-4 py-1.5 text-sm text-foreground transition-all hover:border-foreground/40",
+								children: "Let's talk"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								onClick: () => setMenuOpen(!menuOpen),
+								className: "flex md:hidden p-2 text-muted-foreground transition-colors hover:text-foreground",
+								"aria-label": menuOpen ? "Close menu" : "Open menu",
+								children: menuOpen ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-5 w-5" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, { className: "h-5 w-5" })
+							})
+						]
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "h-px w-full bg-transparent",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "h-px bg-accent-blue transition-[width] duration-150",
+					style: { width: `${progress}%` }
+				})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, { children: menuOpen && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+				initial: { opacity: 0 },
+				animate: { opacity: 1 },
+				exit: { opacity: 0 },
+				transition: { duration: .2 },
+				className: "fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden",
+				onClick: () => setMenuOpen(false)
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+				initial: { x: "100%" },
+				animate: { x: 0 },
+				exit: { x: "100%" },
+				transition: {
+					type: "spring",
+					damping: 25,
+					stiffness: 200
+				},
+				className: "fixed right-0 top-16 z-50 flex h-[calc(100dvh-4rem)] w-72 flex-col border-l border-border/60 bg-background p-6 md:hidden",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
+					className: "flex flex-col gap-1",
 					children: links.map((l) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 						href: l.href,
-						className: "rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground",
+						onClick: () => setMenuOpen(false),
+						className: "rounded-lg px-4 py-3 text-base text-muted-foreground transition-colors hover:bg-surface hover:text-foreground",
 						children: l.label
 					}, l.href))
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center gap-2",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-auto border-t border-border/60 pt-6",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 						href: "#contact",
-						className: "hidden sm:inline-flex items-center rounded-full border border-border/70 bg-surface/60 px-4 py-1.5 text-sm text-foreground transition-all hover:border-foreground/40",
+						onClick: () => setMenuOpen(false),
+						className: "inline-flex w-full items-center justify-center rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90",
 						children: "Let's talk"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {})]
-				})
-			]
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			className: "h-px w-full bg-transparent",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "h-px bg-accent-blue transition-[width] duration-150",
-				style: { width: `${progress}%` }
-			})
-		})]
+					})
+				})]
+			})] }) })
+		]
 	});
 }
 function ParticleField() {
@@ -213,33 +270,105 @@ function ParticleField() {
 function Hero() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		id: "top",
-		className: "relative isolate overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ParticleField, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "relative isolate overflow-hidden pt-20 pb-24 sm:pt-40 sm:pb-32",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ParticleField, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "relative mx-auto max-w-6xl px-6",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
 				initial: {
 					opacity: 0,
-					y: 20
+					x: -20
 				},
 				animate: {
 					opacity: 1,
-					y: 0
+					x: 0
 				},
 				transition: {
 					duration: .8,
 					ease: "easeOut"
 				},
-				className: "max-w-4xl",
+				className: "-mx-6 mb-6 w-[calc(100%+3rem)] md:hidden",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+					src: "/adri2.png",
+					alt: "Adrian Lona",
+					className: "h-[65dvh] w-full object-cover object-top"
+				})
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex flex-col gap-6 md:grid md:grid-cols-[auto_1fr] md:gap-x-12 md:gap-y-0",
 				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-							className: "relative flex h-1.5 w-1.5",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-blue opacity-70" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-blue" })]
-						}), "Available for Engineering Leadership roles"]
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+						initial: {
+							opacity: 0,
+							x: -20
+						},
+						animate: {
+							opacity: 1,
+							x: 0
+						},
+						transition: {
+							duration: .8,
+							ease: "easeOut"
+						},
+						className: "hidden md:block md:row-span-4",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/adri2.png",
+							alt: "Adrian Lona",
+							className: "h-full w-full rounded-2xl object-cover ring-1 ring-border/60 shadow-lg md:w-52 lg:w-60"
+						})
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
-						className: "text-balance font-display text-4xl leading-[1.08] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl",
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+						initial: {
+							opacity: 0,
+							y: 20
+						},
+						animate: {
+							opacity: 1,
+							y: 0
+						},
+						transition: {
+							duration: .6,
+							ease: "easeOut"
+						},
+						className: "max-w-4xl",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "relative flex h-1.5 w-1.5",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-blue opacity-70" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-blue" })]
+							}), "Available for Engineering Leadership roles"]
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.p, {
+						initial: {
+							opacity: 0,
+							y: 20
+						},
+						animate: {
+							opacity: 1,
+							y: 0
+						},
+						transition: {
+							duration: .6,
+							ease: "easeOut",
+							delay: .05
+						},
+						className: "font-display text-5xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl",
+						children: "Adrian Lona"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.h1, {
+						initial: {
+							opacity: 0,
+							y: 20
+						},
+						animate: {
+							opacity: 1,
+							y: 0
+						},
+						transition: {
+							duration: .6,
+							ease: "easeOut",
+							delay: .1
+						},
+						className: "max-w-4xl text-balance font-display text-5xl leading-[1.08] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl",
 						children: [
 							"Engineering Leader building",
 							" ",
@@ -258,12 +387,38 @@ function Hero() {
 							})
 						]
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground text-balance",
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.p, {
+						initial: {
+							opacity: 0,
+							y: 20
+						},
+						animate: {
+							opacity: 1,
+							y: 0
+						},
+						transition: {
+							duration: .6,
+							ease: "easeOut",
+							delay: .15
+						},
+						className: "max-w-2xl text-lg leading-relaxed text-muted-foreground text-balance",
 						children: "Software Engineering Lead with 10+ years delivering enterprise platforms, leading engineering organizations, defining technical strategy, mentoring engineers, and building cloud-native applications."
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "mt-10 flex flex-wrap items-center gap-3",
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+						initial: {
+							opacity: 0,
+							y: 20
+						},
+						animate: {
+							opacity: 1,
+							y: 0
+						},
+						transition: {
+							duration: .6,
+							ease: "easeOut",
+							delay: .2
+						},
+						className: "mt-6 flex flex-wrap items-center gap-3 md:col-span-2",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 								href: "#work",
@@ -283,8 +438,21 @@ function Hero() {
 							})
 						]
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs uppercase tracking-widest text-muted-foreground/70",
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+						initial: {
+							opacity: 0,
+							y: 16
+						},
+						animate: {
+							opacity: 1,
+							y: 0
+						},
+						transition: {
+							duration: .6,
+							ease: "easeOut",
+							delay: .25
+						},
+						className: "mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs uppercase tracking-widest text-muted-foreground/70 md:col-span-2",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Currently" }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -302,7 +470,7 @@ function Hero() {
 						]
 					})
 				]
-			})
+			})]
 		})]
 	});
 }
@@ -952,7 +1120,7 @@ function Projects() {
 								className: "mt-8 grid gap-6 sm:grid-cols-2",
 								children: [
 									{
-										k: "Problem",
+										k: "Opportunity",
 										v: p.problem
 									},
 									{
@@ -1407,20 +1575,24 @@ function Timeline() {
 }
 var slots = [
 	{
-		role: "Engineering Director",
-		context: "on strategic leadership"
+		name: "Isaac Roldan",
+		role: "Product Manager | Grupo Salinas",
+		text: "Adrian brings a rare combination of technical depth and product-minded strategy. He doesn't just build systems — he architects solutions that align with business goals and scale across teams."
 	},
 	{
-		role: "Product Manager",
-		context: "on cross-functional delivery"
+		name: "Angel Solis",
+		role: "CTO | Entersol",
+		text: "Working with Adrian across engineering, product, and ops was seamless. He drives alignment, unblocks teams, and delivers at pace without cutting corners on quality."
 	},
 	{
-		role: "Senior Engineer / Peer",
-		context: "on mentorship & craft"
+		name: "Ricardo Martínez",
+		role: "Technical Leader | Kavak",
+		text: "Adrian raised the bar for engineering craft in our org. His code reviews, architectural guidance, and one-on-one mentorship helped an entire generation of engineers level up."
 	},
 	{
-		role: "Engineering Manager",
-		context: "on team scaling"
+		name: "Benajmin Martínez",
+		role: "Head of Dev OPS | Kavak",
+		text: "When we needed to scale from a handful of teams to dozens, Adrian designed the operating model, the platform strategy, and the hiring plan that made it possible."
 	}
 ];
 function Testimonials() {
@@ -1437,22 +1609,9 @@ function Testimonials() {
 					className: "relative h-full overflow-hidden rounded-2xl border border-border/60 bg-surface/50 p-8",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Quote, { className: "absolute right-6 top-6 h-8 w-8 text-border" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("blockquote", {
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("blockquote", {
 							className: "text-base leading-relaxed text-foreground/80",
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-muted-foreground",
-									children: [
-										"Testimonial from a ",
-										s.role.toLowerCase(),
-										" —"
-									]
-								}),
-								" ",
-								"a written endorsement will appear here reflecting on ",
-								s.context,
-								"."
-							]
+							children: s.text
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("figcaption", {
 							className: "mt-6 flex items-center gap-3",
@@ -1461,10 +1620,10 @@ function Testimonials() {
 								children: s.role.split(" ").map((w) => w[0]).join("")
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "text-sm font-medium text-foreground",
-								children: s.role
+								children: s.name
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "text-xs text-muted-foreground",
-								children: "Coming soon"
+								children: s.role
 							})] })]
 						})
 					]
@@ -1621,7 +1780,7 @@ function Footer() {
 				] })]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "text-xs text-muted-foreground",
-				children: "Designed & built with intent. Dark by default."
+				children: "Designed by Adrian Lona"
 			})]
 		})
 	});
