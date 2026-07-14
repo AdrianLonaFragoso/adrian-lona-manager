@@ -12,7 +12,7 @@ export default defineConfig({
     }),
     react(),
     nitro({
-      output: { dir: "dist", serverDir: "dist/server", publicDir: "dist/client" },
+      preset: "vercel",
     }),
   ],
   resolve: {
